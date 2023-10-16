@@ -9,12 +9,15 @@
  */
 int main(void)
 {
-	char c[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\n";
-	int i;
+	char c;
 
-	for (i = 0; i < 52 ; i++)
+	for (c = 'a' ; c <= 'z' ; c++)
 	{
-		putchar(c[i]);
+		putchar(c);
+	}
+	for (c = 'A' ; c <= 'Z' ; c++)
+	{
+		putchar(c);
 	}
 
 	return (0);
