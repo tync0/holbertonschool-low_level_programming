@@ -9,6 +9,11 @@
  */
 int print_last_digit(int n)
 {
+	if (n < 0)
+	{
+		n = -n;
+	}
+
 	n = n % 10;
 	while (n > 9)
 	{
@@ -16,5 +21,5 @@ int print_last_digit(int n)
 	}
 
 	_putchar('0' + n);
-	return (n < 0 ? -n : n);
+	return (n);
 }
