@@ -3,7 +3,7 @@
 
 /**
  * print_sign -  prints the sign of a number
- * @c: the number is checker
+ * @n: the number is checker
  *
  * Return: Always 0 (Success)
  */
