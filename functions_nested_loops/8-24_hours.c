@@ -11,7 +11,7 @@ void jack_bauer(void)
 
 	for (c1 = '0' ; c1 <= '2' ; c1++)
 	{
-		for (c2 = '0' ; c2 <= '9' ; c2++)
+		for (c2 = '0' ; c1 != '2' ? c2 <= '9' : c2 <= '5' ; c2++)
 		{
 			for (c3 = '0' ; c3 <= '5' ; c3++)
 			{
@@ -24,10 +24,6 @@ void jack_bauer(void)
 					_putchar(c4);
 					_putchar('\n');
 				}
-			}
-			if (c2 == '3')
-			{
-				break;
 			}
 		}
 	}
