@@ -6,7 +6,7 @@
  * @n: the number is checker
  * @X: the number is checker
  *
- * Return: Always 0 (Success)
+ * Return: Always 0 (Successu)
  */
 void print_to_98(int n)
 {
@@ -15,7 +15,7 @@ void print_to_98(int n)
 	if (n < 98)
 	{
 		printf("%d", n);
-		for (x = n ; x <= 98 ; x++)
+		for (x = n + 1 ; x <= 98 ; x++)
 		{
 			if(x != 98)
 			{
@@ -25,11 +25,12 @@ void print_to_98(int n)
 			printf("%d", x);
 
 		}
+		_putchar('\n');
 	}
 	else if (n > 98)
 	{
 		printf("%d", n);
-		for  (x = n ; x >= 98 ; x++)
+		for  (x = n - 1 ; x >= 98 ; x--)
 		{
 			if (x != 98)
 			{
@@ -38,7 +39,11 @@ void print_to_98(int n)
 			}
 			printf("%d", x);
 		}
+		_putchar('\n');
 	}
 	else
+	{
 		printf("%d", 98);
+		_putchar('\n');
+	}
 }
