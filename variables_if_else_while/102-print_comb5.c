@@ -9,21 +9,23 @@
  */
 int main(void)
 {
-	int c, x, y, z;
+	int c1, c2, c3, c4;
 
-	for (c = '0' ; c <= '9' ; c++)
+	for (c1 = '0' ; c1 <= '9' ; c1++)
 	{
-		for (x = c + 1 ; x <= '9' ; x++)
+		for (c2 = '0' ; c2 <= '9' ; c2++)
 		{
-			for (y = x + 1 ; y <= '9' ; y++)
+			for (c3 = '0' ; c3 <= '9' ; c3++)
 			{
-				for (z = y + 1 ; z <= 9 ; z++)
+				for (c4 = c2 + 1 ; c4 <= '9' ; c4++)
 				{
-					putchar(c);
-					putchar(x);
+					putchar(c1);
+					putchar(c2);
 					putchar(' ');
-					putchar(y);
-					putchar(z);
+					putchar(c3);
+					putchar(c4);
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
