@@ -18,7 +18,7 @@ int main(void)
 			i != 100 ? printf("Buzz ") : printf("Buzz");
 		else if (i % 3 == 0)
 			printf("Fizz ");
-		else 
+		else
 			printf("%d ", i);
 	}
 	printf("\n");
