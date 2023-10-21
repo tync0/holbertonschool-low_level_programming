@@ -26,7 +26,7 @@ void print_number(int n)
 		}
 		_putchar(x / 10 + '0');
 		_putchar(x % 10 + '0');
-		for (c1 = i ; c1 > 0 ; c1 --)
+		for (c1 = i ; c1 > 0 ; c1--)
 		{
 			for (j = 1 ; j <= c1 - 1 ; j++)
 			{
@@ -41,7 +41,8 @@ void print_number(int n)
 	}
 	else
 	{
-		_putchar(x / 10 + '0');
+		if (x > 9)
+			_putchar(x / 10 + '0');
 		_putchar(x % 10 + '0');
 	}
 }
