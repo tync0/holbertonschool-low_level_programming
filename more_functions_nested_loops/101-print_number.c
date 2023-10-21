@@ -28,9 +28,10 @@ void print_number(int n)
 		_putchar(x % 10 + '0');
 		for (c1 = i ; c1 > 0 ; c1--)
 		{
+			x1 = n;
 			for (j = 1 ; j <= c1 - 1 ; j++)
 			{
-				x1 = n / 10;
+				x1 = x1 / 10;
 			}
 			x *= 10;
 			c = x1 - x;
