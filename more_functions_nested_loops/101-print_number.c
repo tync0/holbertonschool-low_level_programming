@@ -9,7 +9,8 @@
  */
 void print_number(int n)
 {
-	int x, i = 0, x1, j, c, c1;
+	int i = 0, x1, j, c, c1;
+	unsigned int x;
 
 	if (n < 0)
 	{
