@@ -41,7 +41,7 @@ void print_number(int n)
 			x += c;
 			x1 = n;
 		}
-		_putchat(c2 + '0');
+		_putchar(c2 + '0');
 	}
 	else
 	{
