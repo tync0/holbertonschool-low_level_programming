@@ -9,12 +9,14 @@
  */
 void print_number(int n)
 {
-	int x, i = 0, x1, j, c, c1;
+	int x, i = 0, x1, j, c, c1, c2;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = --n;
+		c2 = n % 10;
+		c2 = -c2;
+		n = n / (-10);
 	}
 	x = n;
 	if (x > 99)
@@ -39,6 +41,7 @@ void print_number(int n)
 			x += c;
 			x1 = n;
 		}
+		_putchat(c2 + '0');
 	}
 	else
 	{
