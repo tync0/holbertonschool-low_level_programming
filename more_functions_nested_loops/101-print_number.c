@@ -9,7 +9,7 @@
  */
 void print_number(int n)
 {
-	int x, i = 0, x1;
+	int x, i = 0, x1, j, c;
 
 	if (n < 0)
 	{
@@ -29,8 +29,7 @@ void print_number(int n)
 			x1 = n / 10;
 		}
 		x *= 10;
-		int c = x1 - x;
-
+		c = x1 - x;
 		_putchar(c + '0');
 		x += c;
 		x1 = n;
