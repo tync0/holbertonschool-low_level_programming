@@ -9,7 +9,7 @@
  */
 void print_number(int n)
 {
-	int x, i = 0, x1, j, c;
+	int x, i = 0, x1, j, c, c1;
 
 	if (n < 0)
 	{
@@ -22,7 +22,7 @@ void print_number(int n)
 		x /= 10;
 		i++;
 	}
-	for (i ; i > 0 ; i--)
+	for (c1 = i ; i > 0 ; i--)
 	{
 		for (j = 1 ; j <= i - 1 ; j++)
 		{
