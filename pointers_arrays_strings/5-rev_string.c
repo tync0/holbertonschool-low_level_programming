@@ -17,7 +17,7 @@ void rev_string(char *s)
 		str++;
 		i++;
 	}
-	char a[i-1];
+	char a[i];
 	for (x = i - 1; x >= 0 ; x--)
 	{
 		a[j] = str[x];
