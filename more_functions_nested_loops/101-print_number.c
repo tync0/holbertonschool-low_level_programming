@@ -10,7 +10,7 @@
 void print_number(int n)
 {
 	int i = 0, x1, j, c, c1;
-	unsigned int x, x2;;
+	unsigned int x, x2;i
 
 	if (n < 0)
 	{
@@ -40,7 +40,7 @@ void print_number(int n)
 			c = x1 - x;
 			_putchar(c + '0');
 			x += c;
-			x1 = n;
+			x1 = x2;
 		}
 	}
 	else
