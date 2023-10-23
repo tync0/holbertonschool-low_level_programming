@@ -17,7 +17,8 @@ void print_number(int n)
 		_putchar('-');
 		x = n * (-1);
 	}
-	x = n;
+	else
+		x = n;
 	if (x > 99)
 	{
 		while (x > 99)
