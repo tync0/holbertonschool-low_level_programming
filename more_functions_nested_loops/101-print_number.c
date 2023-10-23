@@ -10,7 +10,7 @@
 void print_number(int n)
 {
 	int i = 0, x1, j, c, c1;
-	unsigned int x;
+	unsigned int x, x2;;
 
 	if (n < 0)
 	{
@@ -19,6 +19,7 @@ void print_number(int n)
 	}
 	else
 		x = n;
+	x2 = x;
 	if (x > 99)
 	{
 		while (x > 99)
@@ -30,7 +31,7 @@ void print_number(int n)
 		_putchar(x % 10 + '0');
 		for (c1 = i ; c1 > 0 ; c1--)
 		{
-			x1 = n;
+			x1 = x2;
 			for (j = 1 ; j <= c1 - 1 ; j++)
 			{
 				x1 = x1 / 10;
