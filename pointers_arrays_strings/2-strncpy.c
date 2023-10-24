@@ -12,16 +12,10 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	int size2 = strlen(src), j;
-	int x = size2 + 1;
 
 	if (n >= size2)
 	{
-		char s[x];
-		for (j = 0 ; j <= size2 ; j++)
-		{
-			s[j] = *(src + j);
-		}
-		dest = s;
+		dest = src;
 		
 		return (dest);
 	}
