@@ -22,6 +22,9 @@ int _atoi(char *s)
 		x++;
 		s++;
 	}
+	if (x == 1 && (*s >= '0' && *s <= '9'))
+			x--;
+
 	for (j = x; j > 0 ; j--)
 	{
 		s--;
@@ -38,5 +41,8 @@ int _atoi(char *s)
 		s++;
 	}
 
-	return number;
+	if (i % 2 == 0)
+		return (number);
+	else
+		return (-number);
 }
