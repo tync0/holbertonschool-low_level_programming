@@ -14,7 +14,7 @@ char *_strcat(char *dest, char *src)
 
 	for (j = 0 ; j <= size2 ; j++)
 	{
-		*(dest + size1 + j) = *(src + j); 
+		*(dest + size1 + j) = *(src + j);
 	}
 
 	return (dest);
