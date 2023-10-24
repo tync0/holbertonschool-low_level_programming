@@ -11,7 +11,7 @@ int _atoi(char *s)
 {
 	unsigned int i = 0, number = 0, x = 0, j = 0, c1;
 
-	while (!(*s >= '0' && *s <= '9'))
+	while (!(*s >= 48 && *s <= 57))
 	{
 		if (*s == '-')
 			i++;
