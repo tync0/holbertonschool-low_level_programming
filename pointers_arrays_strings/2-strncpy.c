@@ -17,7 +17,7 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		*(dest + j) = *(src + j);
 	}
-	if (size1 < size2 && n >= size2)
+	if (j > size1)
 	{
 		while (*(dest + j) != '\0')
 		{
