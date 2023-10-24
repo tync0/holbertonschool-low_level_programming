@@ -11,7 +11,7 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int size1 = strlen(dest), size2 = strlen(src), j;
+	int size2 = strlen(src), j;
 
 	if (n >= size2)
 	{
