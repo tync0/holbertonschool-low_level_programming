@@ -9,37 +9,30 @@
  */
 int _atoi(char *s)
 {
-	unsigned int i = 0, number = 0, x = 0, j = 0, c1;
+	int b, i, minus = 0, size;
+	unsigned int a = 0;
 
-	while (!(*s >= 48 && *s <= 57))
+	size = strlen(s);
+	for (i = 0; i < size; i++)
 	{
-		if (*s == '-')
-			i++;
-		s++;
-	}
-	while (*s >= 48 && *s <= 57)
-	{
-		x++;
-		s++;
-	}
-	for (j = x; j > 0 ; j--)
-	{
-		s--;
-	}
-	for (j = x; j > 0 ; j--)
-	{
-		int c = 1;
-
-		for (c1 = j - 1 ; c1 > 0 ; c1--)
+		if (*(s + i) == 45)
 		{
-			c *= 10;
+			minus += 1;
 		}
-		number += c * (*s - '0');
-		s++;
+		if (*(s + i) < 58 && *(s + i) > 47)
+		{
+			a = a * 10 + (*(s + i) - 48);
+			if (i != size - 1 && (*(s + i + 1) > 57 || *(s + i + 1) < 48))
+			{
+				break;
+			}
+		}
 	}
-
-	if (i % 2 == 0)
-		return (number);
+	if (minus % 2 == 1)
+	{
+		b = -1 * a;
+	}
 	else
-		return (-number);
+		b = a;
+	return (b);
 }
