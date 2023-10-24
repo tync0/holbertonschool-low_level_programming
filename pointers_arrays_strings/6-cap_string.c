@@ -19,4 +19,6 @@ char *cap_string(char *s)
 			space++;
 		c++;
 	}
+
+	return (s);
 }
