@@ -17,7 +17,7 @@ int _atoi(char *s)
 			i++;
 		s++;
 	}
-	while (*s >= '0' && *s <= '9')
+	while (*s >= '0' && *s <= '9' && *s != '\0')
 	{
 		x++;
 		s++;
@@ -37,8 +37,6 @@ int _atoi(char *s)
 		number += c * (*s - '0');
 		s++;
 	}
-	if (i % 2 == 0)
-		return number;
-	else
-		return -number;
+
+	return number;
 }
