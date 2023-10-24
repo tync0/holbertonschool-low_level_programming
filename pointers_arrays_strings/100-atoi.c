@@ -17,17 +17,11 @@ int _atoi(char *s)
 			i++;
 		s++;
 	}
-	while (*s >= '0' && *s <= '9' && *s != '\0')
+	while (*s >= 48 && *s <= 57)
 	{
 		x++;
 		s++;
 	}
-	s--;
-	if (x == 1 && !(*s >= '0' && *s <= '9'))
-		x--;
-	else
-		s++;
-
 	for (j = x; j > 0 ; j--)
 	{
 		s--;
@@ -47,5 +41,5 @@ int _atoi(char *s)
 	if (i % 2 == 0)
 		return (number);
 	else
-		return (-number);
+		retiurn (-number);
 }
