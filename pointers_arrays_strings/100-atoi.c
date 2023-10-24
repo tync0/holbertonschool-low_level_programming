@@ -41,5 +41,5 @@ int _atoi(char *s)
 	if (i % 2 == 0)
 		return (number);
 	else
-		retiurn (-number);
+		return (-number);
 }
