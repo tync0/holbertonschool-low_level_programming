@@ -10,18 +10,14 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int num1 = 0, num2 = 0;
+	int num;
 
-	while (*s1)
+	while (*s1 != *s2)
 	{
-		num1 += *s1;
+		num = *s1 - *s2;
 		s1++;
-	}
-	while (*s2)
-	{
-		num2 += *s2;
 		s2++;
 	}
 
-	return (num1 - num2);
+	return (num);
 }
