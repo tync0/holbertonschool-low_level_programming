@@ -15,11 +15,11 @@ char *_strncpy(char *dest, char *src, int n)
 
 	if (n >= size2)
 	{
-		for (j = 0 ; j < n ; j++)
+		for (j = 0 ; j < size2 ; j++)
 		{
 			*(dest + j) = *(src + j);
 		}
-		for (; j <= size1 ; j++)
+		for (; j < n ; j++)
 			*(dest + j) = '\0';
 		
 		return (dest);
