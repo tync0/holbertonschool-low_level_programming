@@ -1,10 +1,10 @@
 #include "main.h"
-/*
+/**
  * leet - encode string
  * @s: checker
  * Return: char value
  *
- * */
+ */
 char *leet (char *s)
 {
 	int i = 0, arr[5] = {79, 76, 84, 69, 65}, c, b[5] = {0, 1, 7, 3, 4};
@@ -20,6 +20,6 @@ char *leet (char *s)
 		}
 		i++;
 	}
-	
+
 	return (s);
 }
