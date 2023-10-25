@@ -1,7 +1,8 @@
 #include "main.h"
 /*
- *
- *
+ * leet - encode string
+ * @s: checker
+ * Return: char value
  *
  * */
 char *leet (char *s)
