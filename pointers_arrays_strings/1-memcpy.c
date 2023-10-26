@@ -11,7 +11,7 @@
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int size2 = strlen(src), j;
+	unsigned int size2 = strlen(src), j;
 
 	if (n >= size2)
 	{
