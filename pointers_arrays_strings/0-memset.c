@@ -11,7 +11,7 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	int size2 = strlen(s), j;
+	unsigned int size2 = strlen(s), j;
 
 	if (n >= size2)
 	{
