@@ -17,11 +17,16 @@ unsigned int _strspn(char *s, char *accept)
 		for (c = 0 ; c < size2 ; c++)
 		{
 			if (*(s + i) == accept[c])
-				count++;
-			else
+			{
+				count = 1;
 				break;
+			}
+				
 		}
+		if (count == 0)
+			break;
+		count = 0;
 	}
 
-	return (count);
+	return (i);
 }
