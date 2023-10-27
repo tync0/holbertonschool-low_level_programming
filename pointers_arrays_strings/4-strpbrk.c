@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * _strspn -  gets the length of a prefix substring
+ * _strpbrk -  searches a string for any of a set of bytes
  * @s: checker
  * @accept: checker
  *
@@ -28,5 +28,8 @@ char *_strpbrk(char *s, char *accept)
 		i++;
 	}
 
-	return (s + i);
+	if (c == 0)
+		return (NULL);
+	else
+		return (s + i);
 }
