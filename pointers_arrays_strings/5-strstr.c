@@ -28,5 +28,5 @@ char *_strstr(char *haystack, char *needle)
 	if (c != size1)
 		return (NULL);
 	else
-		return (haystack + j - c);
+		return (haystack + j - c - 1);
 }
