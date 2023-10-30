@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - natural square root of a number
  * zaman - returns the value of x raised to the power of y
- * @n: The character to print
  * @x :checker
  * @y: checker
  *
@@ -17,6 +15,12 @@ int zaman(int x, int y)
 		return (-1);
 	return (zaman(x + 1, y));
 }
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n :checker
+ *
+ * Return: int
+ */
 int _sqrt_recursion(int n)
 {
 
