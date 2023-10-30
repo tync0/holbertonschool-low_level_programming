@@ -2,7 +2,10 @@
 
 /**
  * _sqrt_recursion - natural square root of a number
+ * zaman - returns the value of x raised to the power of y
  * @n: The character to print
+ * @x :checker
+ * @y: checker
  *
  * Return: int
  */
