@@ -18,7 +18,7 @@ int check_num(char *s)
 	count = 0;
 	while (count < strlen(s))
 	{
-		if(!isdigit(s[count]))
+		if (!isdigit(s[count]))
 			return (0);
 		count++;
 	}
