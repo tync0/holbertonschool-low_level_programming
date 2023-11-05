@@ -13,7 +13,7 @@
  */
 int check_num(char *s)
 {
-	int count;
+	unsigned int count;
 
 	count = 0;
 	while (count < strlen(s))
