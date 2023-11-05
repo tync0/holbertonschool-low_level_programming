@@ -10,4 +10,6 @@ int main(int argc, char* argv [])
 		i++;
 	}
 	_putchar('\n');
+
+	return (0);
 }
