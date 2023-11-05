@@ -1,15 +1,16 @@
 #include "main.h"
+#include <stdio.h>
 
-int main(int argc, char* argv [])
+/**
+ *  * main - check the code
+ *   *
+ *    * @argc: var
+ *     * @argv: var
+ *      *
+ *       * Return: Always 0.
+ *        */
+int main(int argc, char *argv[])
 {
-	int i = 0;
-
-	while(*(argv[0] + i))
-	{
-		_putchar(*(argv[0] + i));
-		i++;
-	}
-	_putchar('\n');
-
-	return (0);
+		printf("%s\n", argv[argc - 1]);
+		return (0);
 }
