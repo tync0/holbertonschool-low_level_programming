@@ -6,8 +6,7 @@
 /**
  * _strdup - returns a pointer to a newly allocated space in memory
  *
- * @size: var
- * @c: var
+ * @str: var
  *
  * Return: Always 0.
  */
@@ -16,7 +15,9 @@ char *_strdup(char *str)
 	int size = strlen(str), i;
 	char *s = malloc(size + 1);
 
-	if (str == NULL || s == NULL)
+	if (str == NULL)
+		return (NULL);
+	if (s == NULL)
 		return (NULL);
 	for (i = 0 ; i < size ; i++)
 		s[i] = str[i];
