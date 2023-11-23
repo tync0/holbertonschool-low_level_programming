@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	a = &argv[2];
+	a = argv[2];
 	if ((*a != '+' && *a != '-' && *a != '*' && *a != '/' && *a != '%') || strlen(a) > 1)
 	{
 		printf("Error\n");
