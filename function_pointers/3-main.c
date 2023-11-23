@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 {
 	int num1, num2;
 	char *a;
-	
+
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	a = argv[2];
-	if ((*a != '+' && *a != '-' && *a != '*' && *a != '/' && *a != '%') || strlen(a) > 1)
+	if ((*a != '+' && *a != '-' && *a != '*' && *a != '/' && *a != '%') 
+			|| strlen(a) > 1)
 	{
 		printf("Error\n");
 		exit(99);
