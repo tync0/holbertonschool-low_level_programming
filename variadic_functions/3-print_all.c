@@ -12,31 +12,26 @@
 void print_all(const char * const format, ...)
 {
 	char *s;
-	unsigned int i = 0, size = 0;
+	unsigned int i = 0;
 	va_list ptr;
 
-	while (*(format + i))
-	{
-		size++;
-		i++;
-	}
-	va_start(ptr, size);
+	va_start(ptr, format);
 	i = 0;
 	while (*(format + i))
 	{
 		switch (*(format + i))
 		{
 			case 'c':
-				printf("%c", va_arg(ptr, char));
+				printf("%c", va_arg(ptr, int));
 				break;
 			case 'i':
 				printf("%d", va_arg(ptr, int));
 				break;
 			case 'f':
-				printf("%f", va_arg(ptr, float));
+				printf("%f", va_arg(ptr, double));
 				break;
 			case 's':
-				s = va_arg(ptr, char *s);
+				s = va_arg(ptr, char *);
 				if (s == NULL)
 					printf("(nil)");
 				else
