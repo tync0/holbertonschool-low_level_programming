@@ -12,10 +12,10 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t new = {"", 0, NULL};
+	list_t *p, new = {"", 0, NULL};
 
-	new->str = strdup(str);
-	head = &new;
-
+	new.str = strdup(str);
+	p = &new;
+	head = &p;
 	return (head);
 }
