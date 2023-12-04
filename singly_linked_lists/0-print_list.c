@@ -29,5 +29,5 @@ size_t print_list(const list_t *h)
 		printf("[%lu] %s\n", strlen(head->str), head->str);
 	else
 		printf("[0] (nil)\n");
-	returon (size + 1);
+	return (size + 1);
 }
