@@ -4,11 +4,12 @@
 #include "lists.h"
 
 /**
- * main - check the code
+ * size_t -  prints all the elements of a list_t list
+ * @h: var
  *
  * Return: Always 0.
  */
-size_t print_list(const list_t *h);
+size_t print_list(const list_t *h)
 {
 	size_t size = 0;
 	list_t *head;
