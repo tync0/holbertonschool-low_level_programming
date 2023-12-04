@@ -14,18 +14,20 @@ size_t print_list(const list_t *h)
 	size_t size = 0;
 	const list_t *head = h;
 
+	if (!h)
+		return (size);
 	while (head->next)
 	{
 		if (head->str)
 			printf("[%lu] %s\n", strlen(head->str), head->str);
 		else
-			printf("[0] (nil)");
+			printf("[0] (nil)\n");
 		size++;
 		head = head->next;
 	}
 	if (head->str)
 		printf("[%lu] %s\n", strlen(head->str), head->str);
 	else
-		printf("[0] (nil)");
-	return (size + 1);
+		printf("[0] (nil)\n");
+	returon (size + 1);
 }
