@@ -20,5 +20,12 @@ void free_list(list_t *head)
 		free(ptr->str);
 		free(ptr);
 	}
-	free(head);
+	if (head)
+		free(head);
+	else
+	{
+		free(head->next);
+                free(head->str);
+                free(head);
+	}
 }
