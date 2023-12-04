@@ -1,0 +1,9 @@
+#!/bin/bash
+zor(){
+    local b="$1"
+    chmod 777 $b
+    git add .
+    git commit -m "a"
+    git push
+}
+zor $1
