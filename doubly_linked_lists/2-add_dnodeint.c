@@ -4,7 +4,7 @@
 #include <stdlib.h>
 /**
  * add_dnodeint - adds a new node at the beginning
- * @h: pointer to node
+ * @head: pointer to node
  * @n: val
  * Return: number of nodes
  */
