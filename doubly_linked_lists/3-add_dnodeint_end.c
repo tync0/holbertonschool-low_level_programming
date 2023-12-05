@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * add_dnodeint - adds a new node at the beginning
+ * add_dnodeint_end - adds a new node at the end
  * @head: pointer to node
  * @n: val
  * Return: number of nodes
