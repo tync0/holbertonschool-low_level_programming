@@ -19,19 +19,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	node->n = n;
 	node->next = NULL;
 	node->prev = NULL;
-	if (!(*h))
+	if (!(*h) && n == 0)
 	{
 		*h = node;
 		return (node);
 	}
+	if (!(*h) && n >= 0)
+		return (NULL);
 	ptr = *h;
 	for (i = 0 ; i < idx ; i++)
-	{
-		if (ptr)
-			ptr = ptr->next;
-		else
-			return (NULL);
-	}
+		ptr = ptr->next;
 	if (!ptr)
 	{
 		ptr = add_dnodeint_end(h, n);
