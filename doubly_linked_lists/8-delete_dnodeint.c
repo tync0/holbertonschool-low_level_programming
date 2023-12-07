@@ -4,7 +4,7 @@
 #include <stdlib.h>
 /**
  * delete_dnodeint_at_index - deletes a new node
- * @h: pointer to node
+ * @head: pointer to node
  * @index: val
  * Return: number of nodes
  */
@@ -15,6 +15,14 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (!ptr)
 		return (-1);
+	if (index == 0)
+	{
+		ptr->next = ptr->next->next;
+		ptr->next->prev = NULL;
+		ptr->next = NULL;
+		free(ptr);
+		return (1);
+	}
 	while (i != index)
 	{
 		if (!ptr->next)
