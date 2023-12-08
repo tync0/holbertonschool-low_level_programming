@@ -20,6 +20,7 @@ unsigned int binary_to_uint(const char *b)
 			x += (b[i] - '0') << (size - i - 1);
 		else
 			return (0);
+		i++;
 	}
 	return (x);
 }	
