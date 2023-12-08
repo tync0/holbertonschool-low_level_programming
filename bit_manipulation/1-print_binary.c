@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
 /**
@@ -8,5 +9,23 @@
   */
 void print_binary(unsigned long int n)
 {
+	unsigned long int x, i;
 
+	if (n == 0)
+	{
+		printf("0");
+		return;
+	}
+	x = log2(n);
+	for (i = x ; i > 0 ; i--)
+	{
+		if (n >= pow(2, i))
+		{
+			printf("1");
+			n -= pow(2, i);
+		}
+		else
+			printf("0");
+	}
+	return;
 }
