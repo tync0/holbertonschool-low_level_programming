@@ -15,27 +15,20 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t i;
-	size_t j;
-	int f, r;
-	char s;
+	ssize_t f, r, len;
+	char *txt;
 
-	if (!filename)
+	txt = malloc(letters);
+	if (!txt || !filename)
 		return (0);
 	f = open(filename, O_RDONLY);
 	if (f == -1)
-		return (0);
-	r = read(f, &s, 1);
-	if (r == -1)
-		return (0);
-	for (j = 0 ; j < letters ; j++)
 	{
-		_putchar(s);
-		i++;
-		r = read(f, &s, 1);
-		if (r == 0)
-			break;
+		free(txt);
+		return (0);
 	}
+	r = read(f, txt, letters);
+	len = write(STDOUT_FILENO, txt, r);
 	close(f);
-	return (i);
+	return (len);
 }
