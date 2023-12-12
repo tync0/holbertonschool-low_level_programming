@@ -5,13 +5,13 @@
 #include "main.h"
 
 /**
- *  * read_textfile - check the code
- *   *
- *    * @filename: var
- *     * @letters: var
- *      *
- *       * Return: Always 0.
- *        */
+ * read_textfile - check the code
+ *
+ * @filename: var
+ * @letters: var
+ *
+ * Return: Always 0.
+ */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -36,5 +36,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (r == 0)
 			break;
 	}
+	close(f);
 	return (i);
 }
