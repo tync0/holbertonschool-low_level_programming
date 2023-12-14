@@ -58,7 +58,7 @@ void write_file(int fd, char *filename)
 
 int main(int argc, char *argv[])
 {
-	int f1, f2, r;
+	int f1, f2, r, w;
 	char str[1024];
 
 	if (argc > 3)
@@ -71,10 +71,10 @@ int main(int argc, char *argv[])
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	write_file(f2, argv[2]);
 	r = read(f1, &str, 1024);
-	do
-	{
+	do {
 		read_file(r, argv[1]);
-		write_file(write(f2, &str, 1024), argv[2]);
+		w = write(f2, &str, 1024);
+		write_file(w, argv[2]);
 		r = read(f1, &str, 1024);
 	} while (r > 0);
 	read_file(r, argv[1]);
