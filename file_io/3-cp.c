@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 		read_file(r, argv[1]);
 		write_file(write(f2, &str, 1024), argv[2]);
 		r = read(f1, &str, 1024);
-	} while (r > 0)
+	} while (r > 0);
 	close_file(f1);
 	close_file(f2);
 	return (0);
