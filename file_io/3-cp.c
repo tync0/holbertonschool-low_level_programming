@@ -63,12 +63,7 @@ int main(int argc, char *argv[])
 	int f1, f2, r, w;
 	char *str = malloc(1024);
 
-	if (argc > 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	if (!str)
+	if (argc > 3 || !str)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
@@ -80,10 +75,11 @@ int main(int argc, char *argv[])
 	r = read(f1, str, 1024);
 	do {
 		read_file(r, argv[1]);
-
 		w = write(f2, str, 1024);
 		write_file(w, argv[2]);
 		r = read(f1, str, 1024);
+		f2 = open(argv[2], O_WRONLY | O_APPEND);
+		write_file(f2, argv[2]);
 	} while (r > 0);
 	read_file(r, argv[1]);
 	close_file(f1);
