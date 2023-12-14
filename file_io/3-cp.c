@@ -4,6 +4,52 @@
 #include <fcntl.h>
 
 /**
+ * close_file - close file
+ *
+ * @fd: var
+ * Return: Always 0.
+ */
+void close_file(int fd)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close %d\n", fd);
+		exit(100);
+	}
+}
+/**
+ * read_file - read file
+ *
+ * @fd: var
+ * @str: var
+ * @filename: var
+ * Return: Always 0.
+ */
+void read_file(int fd, char *filename)
+{
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		exit(98);
+	}
+}
+/**
+ * write_file - write file
+ *
+ * @fd: var
+ * @str: var
+ * @filename: var
+ * Return: Always 0.
+ */
+void write_file(int fd, char *filename)
+{
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		exit(99);
+	}
+}
+/**
  * main - main
  *
  * @argc: var
@@ -14,39 +60,26 @@
 
 int main(int argc, char *argv[])
 {
-	int f1, f2, c1, c2;
+	int f1, f2, r, w;
 	char str[1024];
 
 	if (argc > 3)
 	{
-		fprintf(stderr, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	f1 = open(argv[1], O_RDONLY);
-	if (f1 == -1)
-	{
-		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+	read_file(f1, argv[1]);
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (f2 == -1)
+	write_file(f2, argv[2]);
+	r = read(f1, &str, 1024);
+	do
 	{
-		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-	read(f1, &str, 1024);
-	write(f1, &str, 1024);
-	c1 = close(f1);
-	if (c1 == -1)
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", f1);
-		exit(100);
-	}
-	c2 = close(f2);
-	if (c2 == -1)
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", f2);
-		exit(100);
-	}
+		read_file(r, argv[1]);
+		write_file(write(f2, &str, 1024), argv[2]);
+		r = read(f1, &str, 1024);
+	} while (r > 0)
+	close_file(f1);
+	close_file(f2);
 	return (0);
 }
