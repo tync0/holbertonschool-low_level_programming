@@ -21,7 +21,6 @@ void close_file(int fd)
  * read_file - read file
  *
  * @fd: var
- * @str: var
  * @filename: var
  * Return: Always 0.
  */
@@ -37,7 +36,6 @@ void read_file(int fd, char *filename)
  * write_file - write file
  *
  * @fd: var
- * @str: var
  * @filename: var
  * Return: Always 0.
  */
@@ -79,6 +77,7 @@ int main(int argc, char *argv[])
 		write_file(write(f2, &str, 1024), argv[2]);
 		r = read(f1, &str, 1024);
 	} while (r > 0);
+	read_file(r, argv[1]);
 	close_file(f1);
 	close_file(f2);
 	return (0);
