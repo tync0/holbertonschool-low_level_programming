@@ -60,7 +60,7 @@ void write_file(int fd, char *filename)
 
 int main(int argc, char *argv[])
 {
-	int f1, f2, r, w;
+	int f1, f2, r;
 	char str[1024];
 
 	if (argc > 3)
