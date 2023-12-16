@@ -63,9 +63,9 @@ int main(int argc, char *argv[])
 	int f1, f2, r, w;
 	char *str = malloc(1024);
 
-	if (argc > 3 || !str)
+	if (argc != 3 || !str)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp %s %s\n", argv[1], argv[2]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	f1 = open(argv[1], O_RDONLY);
