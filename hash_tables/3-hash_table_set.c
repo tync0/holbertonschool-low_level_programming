@@ -20,13 +20,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = ht->array[l];
 	if (!node->key)
 	{
-		node->key = key;
-		node->value = value;
+		node->key = (char *)key;
+		node->value = (char *)value;
 		return (1);
 	}
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
-		return (0);
 	new->key = key;
 	new->value = value;
 	new->next = node;
