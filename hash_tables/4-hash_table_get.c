@@ -21,15 +21,15 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (!node)
 		return (0);
 	node = ht->array[l];
-	if (strcmp(node->key, key))
+	if (strcmp(node->key, key) == 0)
 		return (node->value);
 	while (node->next)
 	{
-		if (strcmp(node->key, key))
+		if (strcmp(node->key, key) == 0)
 			return (node->value);
 		node = node->next;
 	}
-	if (strcmp(node->key, key))
+	if (strcmp(node->key, key) == 0)
 		return (node->value);
 	return (NULL);
 }
