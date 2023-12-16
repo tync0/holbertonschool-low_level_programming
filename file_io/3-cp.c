@@ -70,14 +70,14 @@ int main(int argc, char *argv[])
 	}
 	f1 = open(argv[1], O_RDONLY);
 	read_file(f1, argv[1]);
-	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	write_file(f2, argv[2]);
-	r = read(f1, str, 1024);
+	r = read(f1, str, sizeof(str));
 	do {
 		read_file(r, argv[1]);
-		w = write(f2, str, 1024);
+		w = write(f2, str, sizeof(str));
 		write_file(w, argv[2]);
-		r = read(f1, str, 1024);
+		r = read(f1, str, sizeof(str));
 	} while (r > 0);
 	read_file(r, argv[1]);
 	close_file(f1);
