@@ -10,34 +10,44 @@
   */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int l;
-	hash_node_t *node;
+	unsigned long int index;
+	hash_node_t *buf, *temp;
 
+	if (!key || key[0] == '\n')
+		return (0);
 	if (!ht)
 		return (0);
-	if (!key)
-		return (0);
-	l = key_index((unsigned char *)key, ht->size);
-	node = malloc(sizeof(hash_node_t));
-	if (!node)
-		return (0);
-	if (ht->array[l] == NULL)
+	index = key_index((unsigned char *) key, ht->size);
+	if (!(ht->array[index]))
 	{
-		node->key = strdup(key);
-		node->value = strdup(value);
-		node->next = NULL;
-		ht->array[l] = node;
-		return (1);
+		buf = malloc(sizeof(hash_node_t *));
+		if (!buf)
+			return (0);
+		buf->key = strdup(key);
+		buf->value = strdup(value);
+		buf->next = NULL;
+		ht->array[index] = buf;
 	}
-	if (strcmp(ht->array[l]->key, key) == 0)
+	else
 	{
-		free(ht->array[l]->value);
-		ht->array[l]->value = strdup(value);
-		return (1);
+		temp = ht->array[index];
+		do {
+			if (!strcmp(temp->key, key))
+			{
+				free(temp->value);
+				temp->value = strdup(value);
+				return (1);
+			}
+			if (temp->next)
+				temp = temp->next;
+		} while (temp->next);
+		buf = malloc(sizeof(hash_node_t *));
+		if (!buf)
+			return (0);
+		buf->key = strdup(key);
+		buf->value = strdup(value);
+		buf->next = ht->array[index];
+		ht->array[index] = buf;
 	}
-	node->key = strdup(key);
-	node->value = strdup(value);
-	node->next = ht->array[l];
-	ht->array[l] = node;
 	return (1);
 }
