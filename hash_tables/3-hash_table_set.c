@@ -24,8 +24,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		node->value = (char *)value;
 		return (1);
 	}
-	new.key = key;
-	new.value = value;
+	new.key = (char *)key;
+	new.value = (char *)value;
 	new.next = node;
 	node = &new;
 	return (1);
